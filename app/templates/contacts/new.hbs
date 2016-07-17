@@ -1,0 +1,21 @@
+<h2>Add a new local contact</h2>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">E-mail</label>
+        <div class="col-sm-10">
+            {{input type="text" value=model.name class="form-control" placeholder="The e-mail of the contact"}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Message</label>
+        <div class="col-sm-10">
+            {{input type="text" value=model.message class="form-control" placeholder="The message of the contact"}}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default" {{action 'saveContact' model}}>Add to contact list</button>
+        </div>
+    </div>
+</div>

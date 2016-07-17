@@ -12,16 +12,13 @@
           <div class="alert alert-success">
           {{textarea class="form-control" placeholder="Your message. (At least 5 characters.)" rows="7" value=message}}
           </div>
-
-        </div>
-          
-
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
-            <button class="btn btn-primary btn-lg btn-block" {{action 'sendMessage'}} disabled={{isDisabled}}>Send message</button>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+            <button class="btn btn-primary btn-lg btn-block" {{action 'sendMessage'}} disabled={{isDisabled}}>Send message </button>
             {{#if responseMessage}}
                 {{responseMessage}} 
             {{/if}}            
         </div>
+         </div>
     </div>
     <br/><br/>
 </div>
