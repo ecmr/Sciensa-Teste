@@ -1,0 +1,14 @@
+<h2>{{title}}</h2>
+
+<div class="row">
+    <div class="col-md-6">
+      {{contact-item-form item=model buttonLabel=buttonLabel action='saveContact'}}
+    </div>
+
+    <div class="col-md-4">
+      {{#contact-item item=model}}
+        <br/>
+      {{/contact-item}}
+    </div>
+
+</div>

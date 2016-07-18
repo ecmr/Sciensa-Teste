@@ -6,7 +6,8 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       libraries: this.store.findAll('library'),
       books: this.store.findAll('book'),
-      authors: this.store.findAll('author')
+      authors: this.store.findAll('author'),
+      contacts: this.store.findAll('contact')
     });
   },
 
@@ -14,5 +15,6 @@ export default Ember.Route.extend({
     controller.set('libraries', model.libraries);
     controller.set('books', model.books);
     controller.set('authors', model.authors);
+    controller.set('contacts', model.contacts);
   }
 });

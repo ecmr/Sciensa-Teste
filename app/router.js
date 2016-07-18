@@ -19,6 +19,12 @@ Router.map(function() {
     this.route('new');
     this.route('edit', { path: '/:library_id/edit' });
   });
+
+  this.route('contacts', function() {
+    this.route('new');
+    this.route('edit', { path: '/:contact_id/edit' });
+  });
+
   this.route('authors');
   this.route('books');
 });
