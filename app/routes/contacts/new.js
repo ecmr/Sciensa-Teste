@@ -2,11 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-  emailaddress: '',
-
-  isValid: Ember.computed.match('emailAddress', /^.+@.+\..+$/),
-  isDisabled: Ember.computed.not('isValid'),
-  
 
   model: function () {
     return this.store.createRecord('contact');

@@ -1,14 +1,21 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
-import { hasMany } from 'ember-data/relationships';
 import Ember from 'ember';
-import Faker from 'faker';
 
 export default Model.extend({
   emailaddress: attr('string'),
   message: attr('string'),
 
-  isValid: Ember.computed.notEmpty('emailaddress'),
+  
+  isValidEmail: Ember.computed.match('emailaddress', /^.+@.+\..+$/),
+  isMessageEnoughLong: Ember.computed.gte('message.length', 5),
+
+  isValid: Ember.computed.and('isValidEmail', 'isMessageEnoughLong'),
+
+
+  //isValid: Ember.computed.gte('message.length', 5 ),  
+  //isValid: Ember.computed.match('emailaddress', /^.+@.+\..+$/),
+  isDisabled: Ember.computed.not('isValid'),
 
   randomize() {
     this.set('emailaddress', this._fullAddress());
